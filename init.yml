@@ -26,3 +26,5 @@
         dest: ~/x11.sh
     - name: Append to the shell file
       shell: cat x11.sh >> .bashrc
+    - name: Remove the shell file
+      shell: rm x11.sh
