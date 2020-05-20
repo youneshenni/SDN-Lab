@@ -1,0 +1,28 @@
+---
+- name: Setup mininet VM
+  hosts: mininet
+  tasks:
+
+    - name: Install packages
+      become: yes
+      apt:
+        update_cache: yes
+        pkg:
+          - mininet
+          - x11-apps
+          - vim
+          - wireshark
+          - wireshark-gtk
+          - openvswitch-switch
+          - iperf
+          - curl
+          - hping3
+          - apache2-utils
+          - python3-ryu
+          - mininet
+    - name: Configure X11 forwarding
+      copy:
+        src: files/x11.sh
+        dest: ~/x11.sh
+    - name: Append to the shell file
+      shell: cat x11.sh >> .bashrc
