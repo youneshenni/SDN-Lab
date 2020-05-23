@@ -8,7 +8,6 @@
       apt:
         update_cache: yes
         pkg:
-          - mininet
           - x11-apps
           - vim
           - wireshark
@@ -20,6 +19,10 @@
           - apache2-utils
           - python3-ryu
           - mininet
+          - xterm
+          - python3-tk
+          - python3-pip
+          - git
     - name: Configure X11 forwarding
       copy:
         src: files/x11.sh
@@ -28,3 +31,18 @@
       shell: cat x11.sh >> .bashrc
     - name: Remove the shell file
       shell: rm x11.sh
+    - name: Clone the mininet repository
+      git:
+        clone: yes
+        repo: git://github.com/mininet/mininet
+        dest: '/home/{{ansible_user}}/mininet'
+    - name: Install setuptools
+      pip:
+        name:
+          - setuptools
+        executable: pip3
+    - name: Install mininet
+      become: yes
+      command:
+        chdir: '/home/{{ansible_user}}/mininet'
+        cmd: python3 setup.py install

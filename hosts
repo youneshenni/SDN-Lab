@@ -1,2 +1,3 @@
 [mininet]
 51.77.109.168  ansible_user=ubuntu
+minimal_vm ansible_user=younabobo
