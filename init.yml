@@ -46,3 +46,8 @@
       command:
         chdir: '/home/{{ansible_user}}/mininet'
         cmd: python3 setup.py install
+    - name: Copy router file
+      copy:
+        src: files/routerTopo.py
+        dest: ~/mininet/examples/routerTopo.py
+        mode: 0775
