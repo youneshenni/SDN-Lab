@@ -48,6 +48,9 @@
         cmd: python3 setup.py install
     - name: Copy router file
       copy:
-        src: files/routerTopo.py
-        dest: ~/mininet/examples/routerTopo.py
+        src: files/lab3.py
+        dest: ~/mininet/examples/lab3.py
         mode: 0775
+    - name: Allow wireshark to work for sudoers
+      command: echo "wireshark-common wireshark-common/install-setuid boolean true" | sudo debconf-set-selections
+
