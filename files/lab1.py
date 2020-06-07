@@ -24,6 +24,7 @@ def topology():
     net.addLink(h2, s1)
     net.addLink(h3, s1)
     net.addLink(h4, s1)
+    CLI(net)
     net.stop()
 
 
