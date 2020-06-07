@@ -11,8 +11,6 @@ def topology():
                   link=TCLink, switch=OVSKernelSwitch)
     net = Mininet(controller=RemoteController, switch=OVSSwitch)
     # Add hosts and switches
-    c0 = net.addController(
-        'c0', controller=RemoteController, ip='127.0.0.1', port=6633)
     h1 = net.addHost('h1', ip='10.1.1.10/24', mac='00:00:00:00:00:01')
     h2 = net.addHost('h2', ip='10.1.1.20/24', mac='00:00:00:00:00:02')
     h3 = net.addHost('h3', ip='10.1.2.30/24', mac='00:00:00:00:00:03')
@@ -24,8 +22,6 @@ def topology():
     net.addLink(h3, s1)
     net.addLink(h4, s1)
     net.build()
-    s1.start([c0])
-    c0.start()
     net.start()
     CLI(net)
     net.stop()
