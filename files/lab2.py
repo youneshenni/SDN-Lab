@@ -34,7 +34,7 @@ def topology():
     h2.cmd("ip route add default via 10.1.1.1")
     h3.cmd("ip route add default via 10.1.2.1")
     h4.cmd("ip route add default via 10.1.2.1")
-    s1.cmd("ovs-ofctl add-flow s1 dl_type=0x0800,actions=normal")
+    s1.cmd("ovs-ofctl add-flow s1 actions=normal")
     CLI(net)
     net.stop()
 
