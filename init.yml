@@ -1,3 +1,4 @@
+# Create cron job to automatically delete .mininet_history
 ---
 - name: Setup mininet VM
   hosts: mininet
@@ -46,7 +47,17 @@
       command:
         chdir: '/home/{{ansible_user}}/mininet'
         cmd: python3 setup.py install
-    - name: Copy router file
+    - name: Copy lab 1 file
+      copy:
+        src: files/lab1.py
+        dest: ~/mininet/examples/lab1.py
+        mode: 0775
+    - name: Copy lab 2 file
+      copy:
+        src: files/lab2.py
+        dest: ~/mininet/examples/lab2.py
+        mode: 0775
+    - name: Copy lab 3 file
       copy:
         src: files/lab3.py
         dest: ~/mininet/examples/lab3.py
