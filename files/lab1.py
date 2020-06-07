@@ -1,10 +1,9 @@
 #!/usr/bin/env python
-from mininet.topo import Topo
-from mininet.cli import CLI
 from mininet.net import Mininet
-from mininet.node import CPULimitedHost, Host, Node
-from mininet.node import OVSKernelSwitch, UserSwitch, OVSSwitch
-from mininet.node import Controller, RemoteController, OVSController
+from mininet.node import Controller, RemoteController, OVSKernelSwitch, UserSwitch
+from mininet.cli import CLI
+from mininet.log import setLogLevel
+from mininet.link import Link, TCLink
 
 
 def topology():
