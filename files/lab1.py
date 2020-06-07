@@ -10,8 +10,6 @@ def topology():
     net = Mininet(controller=RemoteController,
                   link=TCLink, switch=OVSKernelSwitch)
     net = Mininet(controller=Controller, switch=OVSSwitch)
-    # Initialize topology
-    Topo.__init__(net)
     # Add hosts and switches
     h1 = net.addHost('h1', ip='10.1.1.10/24', mac='00:00:00:00:00:01')
     h2 = net.addHost('h2', ip='10.1.1.20/24', mac='00:00:00:00:00:02')
