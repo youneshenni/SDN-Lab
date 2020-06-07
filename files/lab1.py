@@ -29,4 +29,8 @@ def topology():
     net.stop()
 
 
-topos = {'lab1': (lambda: MyTopo())}
+if __name__ == '__main__':
+    setLogLevel('info')
+    topology()
+
+topos = {'lab1': (lambda: topology())}

@@ -18,4 +18,4 @@ if __name__ == '__main__':
     setLogLevel('info')
     topology()
 
-topos = {'lab2': (lambda: topology())}
+topos = {'lab0': (lambda: topology())}
