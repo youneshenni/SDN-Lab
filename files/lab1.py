@@ -23,6 +23,7 @@ def topology():
     net.addLink(h4, s1)
     net.build()
     net.start()
+    s1.cmd('ovs-ofctl add-flow s1 action=normal')
     CLI(net)
     net.stop()
 
