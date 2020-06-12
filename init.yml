@@ -1,6 +1,6 @@
 ---
 - name: Setup mininet VM
-  hosts: mininet
+  hosts: all
   tasks:
 
     - name: Install packages

@@ -1,0 +1,15 @@
+[Unit]
+Description=Webhook
+
+[Service]
+ExecStart=/usr/bin/node /var/www/webhook/app.js
+Restart=always
+User=ubuntu
+# Note Debian/Ubuntu uses 'nogroup', RHEL/Fedora uses 'nobody'
+Group=ubuntu
+Environment=PATH=/usr/bin:/usr/local/bin
+Environment=NODE_ENV=production
+WorkingDirectory=/var/www/webhook
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,1 @@
+51.75.169.211 ansible_user=ubuntu ansible_ssh_extra_args='-o StrictHostKeyChecking=no'
